@@ -14,7 +14,7 @@ public class TestesImpostos {
         System.out.println(valorImposto);*/
 
         // Com padrão strategy
-        Orcamento orcamento = new Orcamento(new BigDecimal("100"));
+        Orcamento orcamento = new Orcamento(new BigDecimal("100"), 1);
         CalculadoraDeImposto calculadora = new CalculadoraDeImposto();
         Imposto icms = new ICMS();
         Imposto iss = new ISS();
