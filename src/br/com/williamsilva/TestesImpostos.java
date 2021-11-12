@@ -15,6 +15,15 @@ public class TestesImpostos {
 
         // Com padrão strategy
         Orcamento orcamento = new Orcamento(new BigDecimal("100"), 1);
+        System.out.println("Situação: " + orcamento.getSituacao().toString());
+        orcamento.aplicarDescontoExtra();
+        System.out.println("Valor com desconto: " + orcamento.getValor());
+        orcamento.aprovar();
+        System.out.println("Situação: " + orcamento.getSituacao());
+        orcamento.aplicarDescontoExtra();
+        System.out.println("Valor com desconto: " + orcamento.getValor());
+        orcamento.finalizar();
+        System.out.println("Situação: " + orcamento.getSituacao());
         CalculadoraDeImposto calculadora = new CalculadoraDeImposto();
         Imposto icms = new ICMS();
         Imposto iss = new ISS();
