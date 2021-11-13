@@ -1,17 +1,13 @@
 package br.com.williamsilva.pedido;
 
-import br.com.williamsilva.orcamento.Orcamento;
-
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
 
 public class GeraPedido {
 
-    private String cliente;
-    private BigDecimal valorOrcamento;
-    private int quantidadeItens;
+    private final String cliente;
+    private final BigDecimal valorOrcamento;
+    private final int quantidadeItens;
 
-    // injeção de dependências: PedidoRepository, EmailService, ...
     public GeraPedido(String cliente, BigDecimal valorOrcamento, int quantidadeItens) {
         this.cliente = cliente;
         this.valorOrcamento = valorOrcamento;
