@@ -1,6 +1,7 @@
 package br.com.williamsilva;
 
 import br.com.williamsilva.pedido.GeraPedido;
+import br.com.williamsilva.pedido.GeraPedidoHandler;
 
 import java.math.BigDecimal;
 
@@ -12,6 +13,7 @@ public class TestesPedidos {
         int quantidadeItens = Integer.parseInt(args[2]);
 
         GeraPedido gerador = new GeraPedido(cliente, valorOrcamento, quantidadeItens);
-        gerador.executa();
+        GeraPedidoHandler handler = new GeraPedidoHandler(/*dependecias*/);
+        handler.executa(gerador);
     }
 }
