@@ -1,6 +1,8 @@
 package br.com.williamsilva.pedido;
 
 import br.com.williamsilva.orcamento.Orcamento;
+import br.com.williamsilva.pedido.acao.EnviarEmailPedido;
+import br.com.williamsilva.pedido.acao.SalvarPedidoNoBancoDeDados;
 
 import java.time.LocalDateTime;
 
@@ -12,7 +14,10 @@ public class GeraPedidoHandler {
 
         Pedido pedido = new Pedido(dados.getCliente(), LocalDateTime.now(), orcamento);
 
-        System.out.println("Salvar o pedido no banco de dados");
-        System.out.println("Enviar e-mail com dados do novo pedido");
+        EnviarEmailPedido email = new EnviarEmailPedido();
+        SalvarPedidoNoBancoDeDados salvar = new SalvarPedidoNoBancoDeDados();
+
+        salvar.executa(pedido);
+        email.executa(pedido);
     }
 }
